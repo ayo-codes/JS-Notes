@@ -393,6 +393,53 @@ be careful when calling functions and ensure you use the right capital letters
 
  
   console.log(val);
+/
+
+// Template literals aka template literals (lecture 11) - are part of ES6 updates - used in situations where you will be fetching html from javascript e.g using ajax and this will need to be displayed . if you then wanted to put it in an unordered list with dynamic data this becomes tricky
+
+  const name = 'John';
+  const age = 31;
+  const job = 'Web Developer';
+  const city = 'Miami';
+  let html;  // declaration for html
+
+  // Without template strings (es5) - you would have had to list everything 
+  
+  html = '<ul><li>Name: ' + name + '</li><li>Age: ' + age + ' </li><li>Job: '+ job+ ' </li><li>City: '+ city +' </li></ul>'; 
+
+ 
+  
+  // you have the descriptor and then also the dynamic data in the white. This is an example of a html string
+
+ 
+  
+  html = '<ul>' +
+        '<li>Name: ' + name + '</li>' +
+        '<li>Age: ' + age + '</li>' +
+        '<li>Job: ' + job + '</li>' +
+        '<li>City: ' + city + '</li>' +
+        '</ul>'; 
+        // this method above concanates the script so that it is easier to read , so ensure it ends on the + sign is at the end. it enables the use of different lines.
+
+  function hello(){
+    return 'hello';
+  }
+
+  // With template strings (es6) - you need to use '`' these are called backticks to start and end the code . to insert a variable or expression etc you will just use ${insert var / expression}
+  html = `
+    <ul>
+      <li>Name: ${name}</li>
+      <li>Age: ${age}</li>
+      <li>Job: ${job}</li>
+      <li>City: ${city}</li>
+      <li>${2 + 2}</li> //it can be used to do math expressions
+      <li>${hello()}</li> // it can be used to put in functions
+      <li>${age > 30 ? 'Over 30' : 'Under 30'}</li> // it can be used to do conditionals like to tell if a figure is over 30 '?' is a ternary operator and the ':' is used for else statements
+    </ul>
+  `;
+
+  document.body.innerHTML = html;  // this is to display it in the browser the <script> must be in the body for it to work 
 */
 
-
+//Arrays and Array methods
+// Arrays are zero based
