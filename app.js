@@ -346,5 +346,15 @@ val = fName.toUpperCase();  // changes to uppercase , this is a method so the ()
 
 val = fName.toLowerCase(); // changes to lowercase
 
+val = fName[2]; // this calls the character number in that value , e.g 2 here calls the 3rd character since arrays are zero-based 
+
+// finding character position
+val = fName.indexOf ('u') ; // this gives us the first index of that particular letter in the () . This is also called the substring. it counts from the left and counts the first occurrence of that character.
+
+val = fName.lastIndexOf ('u') ;// this gives the last index or the last time a particular index was present . 
+
+//NOTE :if the character is missing it will return a result of -1
+
+
 
 console.log(val);
