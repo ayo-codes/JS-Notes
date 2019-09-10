@@ -300,61 +300,99 @@ be careful when calling functions and ensure you use the right capital letters
 
   val = Math.floor(Math.random() * 20 + 1 ); // If you want it between 1 and 20  but also want it be a whole number, note that this will round it downwards
   console.log(val);
+/
+
+//String Methods and Concatenation - lecture 10
+
+  const fName = 'Tobechukwu'
+  const lName = 'Ogochi'
+  const age9  = 31
+  const story = 'hello my name is ayo and i am a boy'
+  const tags = 'web , offline , online '
+
+  let val;
+
+  val = fName + lName // this gives an output with not space
+
+  val = fName + ' ' + lName; // to concatenate properly ensure there are spaces between the quotes to actually have the space show up in 
+
+  val = 'Hello my name is ' + fName + ' I am ' + age9 ; // when calling the fName or lName , there is no need to use the '' quotations since it is not the string
+
+  // Appending - this is if you want to add something 
+
+  val = 'ayo ' ;
+
+  val += 'onamusi' ; // the += means val = Val + onamusi ( this is the new value) you can also include a space in the value to create the extra space
+
+  // Escaping , in JS you can use a quote in a string as long as it doesnt match the outside string , so if it is "" on the outside you can't use it on the inside , you can use the '' on the inside. at times this is not always possible, so it is important to know how to use escaping
+
+
+
+  //val = 'That's awesome , I can't wait'; // this will generate an error instead
+
+  val = 'That\'s awesome , I can\'t wait'; // using the \ in front of the ' will let the browser know to ignore that, so it knows that it is not ending a string
+
+  //properties available to strings
+  // 1  .length - you do not need () when you are using a property but you do when you are using length
+
+  val =fName.length; // this counts number of characters in the string 
+
+  //methods available to strings -
+  //1. concat()
+
+  val = fName.concat(' ' , lName) // this is another way to do a concatenation
+
+  //2. Change case
+
+  val = fName.toUpperCase();  // changes to uppercase , this is a method so the () are needed 
+
+  val = fName.toLowerCase(); // changes to lowercase
+
+  val = fName[2]; // this calls the character number in that value , e.g 2 here calls the 3rd character since arrays are zero-based 
+
+  // finding character position
+  val = fName.indexOf ('u') ; // this gives us the first index of that particular letter in the () . it counts from the left and counts the first occurrence of that character.
+
+  val = fName.lastIndexOf ('u') ;// this gives the last index or the last time a particular index was present . 
+
+  //NOTE :if the character is missing it will return a result of -1
+
+  //to find a 'character at' certain position you can use 
+  val = fName.charAt('2'); //- use quotes as it is a string.
+
+  //to get the last character of a string you can use 
+
+  val = fName.charAt(fName.length -1 ); // this gives us the last character.
+
+  //to get a substring() , that is to pull a substring out of your name 
+
+  val= fName.substring(0,4); // in this example we get the substring for 'Tobe' so it counts the first character T as (0) and and the 5th character C as (4) and gives the result between them .
+
+  //slice() - it is mainly used to pull things out of arrays but it also can be used in strings
+
+  val =fName.slice( 0 ,4 ); // you can also use it with negative numbers  and this counts from the back
+
+  val =fName.slice( -2  ); // you can also use it with negative numbers  and this counts from the back , in this example it takes the last 2. 
+
+  //split() - this can split a string and then it returns them into an array based on a separator. for this example we created the const story
+
+  val = story.split(' ') // if you just leave the quote to be no space '' then it will split every character  but if you put a space ' ' then it splits the words into arrays . in this example you end up with an array with 10 objects. 
+
+  val = tags.split(',') // this will split the tags  based on the commas into an array.
+
+  //replace() - this is used to replace something inside a string 
+
+  val =story.replace('ayo', ' joy')  // if you leave the second option , in this case joy blank , it will replace it with a blank rather than a word. so it can be used to omit something I guess.
+
+  //includes() - this gives a true or false value depending on if something is in the string 
+
+  val = story.includes('hello'); //if hello is included the string the it will return a true value , if it isn't it will return a false value
+
+  val = story.includes('ghose'); //if ghose is included the string the it will return a true value , if it isn't it will return a false value
+
+
+ 
+  console.log(val);
 */
 
-//String Methods and Concatenation
 
-const fName = 'Tobechukwu'
-const lName = 'Ogochi'
-const age9  = 31
-
-let val;
-
-val = fName + lName // this gives an output with not space
-
-val = fName + ' ' + lName; // to concatenate properly ensure there are spaces between the quotes to actually have the space show up in 
-
-val = 'Hello my name is ' + fName + ' I am ' + age9 ; // when calling the fName or lName , there is no need to use the '' quotations since it is not the string
-
-// Appending - this is if you want to add something 
-
-val = 'ayo ' ;
-
-val += 'onamusi' ; // the += means val = Val + onamusi ( this is the new value) you can also include a space in the value to create the extra space
-
-// Escaping , in JS you can use a quote in a string as long as it doesnt match the outside string , so if it is "" on the outside you can't use it on the inside , you can use the '' on the inside. at times this is not always possible, so it is important to know how to use escaping
-
-
-
-//val = 'That's awesome , I can't wait'; // this will generate an error instead
-
-val = 'That\'s awesome , I can\'t wait'; // using the \ in front of the ' will let the browser know to ignore that, so it knows that it is not ending a string
-
-//properties available to strings
-// 1  .length - you do not need () when you are using a property but you do when you are using length
-
-val =fName.length; // this counts number of characters in the string 
-
-//methods available to strings -
-//1. concat()
-
-val = fName.concat(' ' , lName) // this is another way to do a concatenation
-
-//2. Change case
-
-val = fName.toUpperCase();  // changes to uppercase , this is a method so the () are needed 
-
-val = fName.toLowerCase(); // changes to lowercase
-
-val = fName[2]; // this calls the character number in that value , e.g 2 here calls the 3rd character since arrays are zero-based 
-
-// finding character position
-val = fName.indexOf ('u') ; // this gives us the first index of that particular letter in the () . This is also called the substring. it counts from the left and counts the first occurrence of that character.
-
-val = fName.lastIndexOf ('u') ;// this gives the last index or the last time a particular index was present . 
-
-//NOTE :if the character is missing it will return a result of -1
-
-
-
-console.log(val);
